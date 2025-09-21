@@ -8,7 +8,16 @@ public class Person {
     private final String aEmailAddress;
     private boolean aPurchasedParkingPass;
 
-    public Person(String pName, LocalDate pDOB, String pEmailAddress) {
+   public Person(String pName, LocalDate pDOB, String pEmailAddress) {
+        if (pName == null || pName.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+        if (pDOB == null || pDOB.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("Date of birth is invalid");
+        }
+        if (pEmailAddress == null || !pEmailAddress.contains("@")) {
+            throw new IllegalArgumentException("Email is invalid");
+        }
         aName = pName;
         aDOB = pDOB;
         aEmailAddress = pEmailAddress;
