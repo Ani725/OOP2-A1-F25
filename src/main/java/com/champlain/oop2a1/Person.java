@@ -3,9 +3,9 @@ package com.champlain.oop2a1;
 import java.time.LocalDate;
 
 public class Person {
-    private String aName;
-    private LocalDate aDOB;
-    private String aEmailAddress;
+    private final String aName;
+    private final LocalDate aDOB;
+    private final String aEmailAddress;
     private boolean aPurchasedParkingPass;
 
     public Person(String pName, LocalDate pDOB, String pEmailAddress) {
